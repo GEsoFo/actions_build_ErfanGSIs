@@ -21,19 +21,14 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
  
        - name: Checkout
          uses: actions/checkout@master
-         
-       - name: jingxiang
-         run: |
-            sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-            sudo gedit /etc/apt/sources.list
-           
+       
        - name: Initialization environment
          run: |
             sudo -E apt-get -qq install git wget
