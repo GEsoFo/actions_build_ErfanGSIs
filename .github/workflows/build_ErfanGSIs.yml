@@ -25,8 +25,14 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
+ 
        - name: Checkout
          uses: actions/checkout@master
+         
+       - name: jingxiang
+         run: |
+            sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+            sudo gedit /etc/apt/sources.list
            
        - name: Initialization environment
          run: |
